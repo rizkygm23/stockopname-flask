@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<body class="body-login">
+    <div class="container">
+        <form method="POST" action="{{ action }}" class="form">
+            <h1>Login</h1>
+            <div class="form-colom">
+                <div class="form-input">
+                    <label for="nim">NIM:</label>
+                    <input class="input-det" type="number" name="nim" id="nim" required><br>
+                </div>
+    
+                <div class="form-input">
+                    <label for="pin">PIN:</label>
+                    <input class="input-det" type="password" name="pin" id="pin" required><br>
+                </div>
+            </div>
+
+            <button class="btn-utama" type="submit">{{ button_login }}</button>
+        </form>
+    </div>
+    
+
+    <div ">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flash">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        {% if message %}
+        <p class="{{ alert }}">{{ message }}</p>
+        {% endif %}
+    </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
+
