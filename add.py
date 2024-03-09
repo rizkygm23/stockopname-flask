@@ -1,6 +1,6 @@
 from flask import Flask, flash, render_template, request, redirect
 import data as dat
-
+codifn = "ini data test"
 class Tambah:
     def __init__(self):
         # Inisialisasi atribut-atribut yang digunakan dalam class

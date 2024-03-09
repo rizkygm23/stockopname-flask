@@ -47,3 +47,7 @@ class LoginCard:
     def Home(self):
         # Mengembalikan halaman index.html
         return render_template('index.html')
+    
+    
+    
+    # asasas
